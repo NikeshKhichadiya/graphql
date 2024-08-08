@@ -9,7 +9,7 @@
     "outDir": "./dist",
     "rootDir": "./server",
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
   },
   "include": [
     "server/**/*",
