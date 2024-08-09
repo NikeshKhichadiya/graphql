@@ -1,15 +1,24 @@
 import React, { Fragment } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
-import Client from './components/Client';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
+import Project from './pages/Project';
 
 const App: React.FC = () => {
   return (
     <Fragment>
-      <Header />
-      <div className='container'>
-        <Client />
-      </div>
+      <Router>
+        <Header />
+        <div className='container'>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/project/:id" element={<Project />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </Router>
     </Fragment>
   )
 }
